@@ -2008,9 +2008,9 @@ pre code {
 }
 .post-eof {
   background: #ccc;
-  height: 1px;
+  height: 3px;
   margin: 80px auto 60px;
-  width: 8%;
+  width: 100%;
 }
 .post-block:last-of-type .post-eof {
   display: none;
