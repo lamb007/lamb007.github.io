@@ -57,6 +57,7 @@
 <p><a href="https://hyfshishen.github.io/tutorial-01-llvm.html">https://hyfshishen.github.io/tutorial-01-llvm.html</a></p>
 ]]></content>
       <categories>
+        <category>Linux</category>
         <category>Linux环境搭建</category>
       </categories>
       <tags>
@@ -277,6 +278,7 @@
 <p>​	方法：开机过程中按F2进入BIOS，切换为独显模式(在windows系统中切换为独显模式好像没用，要在bios中切换)</p>
 ]]></content>
       <categories>
+        <category>Linux</category>
         <category>Linux环境搭建</category>
       </categories>
       <tags>
