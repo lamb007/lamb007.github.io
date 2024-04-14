@@ -283,4 +283,24 @@
         <tag>Linux环境搭建</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux更新软件包版本</title>
+    <url>/2024/04/14/Linux%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%89%88%E6%9C%AC/</url>
+    <content><![CDATA[<p>试了多种方法，最方便，最简洁的方法是使用 <code>Apt-show-versions</code>，能看到版本，还能看到仓库网址</p>
+<p>默认情况下系统没有安装 <code>apt-show-versions</code>，你需要使用以下命令来安装它：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install apt-show-versions</span><br></pre></td></tr></table></figure>
+
+<p>按照后，运行以下命令查找软件包的版本，如gdb：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-show-versions -a gdb</span><br><span class="line">gdb:amd64 12.1-0ubuntu1~22.04 install ok installed</span><br><span class="line">gdb:amd64 9.1-0ubuntu1         focal         mirrors.tuna.tsinghua.edu.cn</span><br><span class="line">gdb:amd64 9.2-0ubuntu1~20.04.1 focal-updates mirrors.tuna.tsinghua.edu.cn</span><br><span class="line">gdb:amd64 12.0.90-0ubuntu1     jammy         cn.archive.ubuntu.com</span><br><span class="line">gdb:amd64 12.1-0ubuntu1~22.04  jammy-updates cn.archive.ubuntu.com</span><br><span class="line">No stable version</span><br><span class="line">gdb:amd64/jammy-updates 12.1-0ubuntu1~22.04 uptodate</span><br><span class="line">gdb:i386 9.1-0ubuntu1         focal         mirrors.tuna.tsinghua.edu.cn</span><br><span class="line">gdb:i386 9.2-0ubuntu1~20.04.1 focal-updates mirrors.tuna.tsinghua.edu.cn</span><br><span class="line">gdb:i386 12.0.90-0ubuntu1     jammy         cn.archive.ubuntu.com</span><br><span class="line">gdb:i386 12.1-0ubuntu1~22.04  jammy-updates cn.archive.ubuntu.com</span><br><span class="line">No stable version</span><br><span class="line">gdb:i386 not installed</span><br></pre></td></tr></table></figure>
+
+<p>这里，<code>-a</code> 选项打印给定软件包的所有可用版本。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Linux command</category>
+      </categories>
+      <tags>
+        <tag>Linux command</tag>
+      </tags>
+  </entry>
 </search>
