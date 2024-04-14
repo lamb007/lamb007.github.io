@@ -330,7 +330,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-04-14 13:50:59 / 修改时间：15:21:44" itemprop="dateCreated datePublished" datetime="2024-04-14T13:50:59+08:00">2024-04-14</time>
+      <time title="创建时间：2024-04-14 13:50:59 / 修改时间：15:27:14" itemprop="dateCreated datePublished" datetime="2024-04-14T13:50:59+08:00">2024-04-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -381,216 +381,15 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="一、操作系统环境"><a href="#一、操作系统环境" class="headerlink" title="一、操作系统环境"></a>一、操作系统环境</h1><ul>
-<li><p>电脑型号：拯救者Y9000P</p>
-</li>
-<li><p>操作系统：Windows11</p>
-<ul>
-<li><p>win11关闭快速启动</p>
-<p>控制面板 =&gt; 硬件与声音 =&gt;电源选项 =&gt; 系统设置</p>
-<p>点击更改当前不可用的设置，取消勾选<code>启用快速启动</code></p>
-</li>
-</ul>
-</li>
-<li><p>安全启动状态(security boot)：disabled</p>
-<ul>
-<li>开机过程中长按F2，进入BIOS，点击more settings，修改启动状态</li>
-</ul>
-</li>
-<li><p>Linux系统安装在一个新的固态硬盘上，大小2TB</p>
-<ul>
-<li>windows中搜索<code>计算机系统</code>，点击磁盘管理，可以查看</li>
-</ul>
-</li>
-</ul>
-<h2 id="二、制作启动盘"><a href="#二、制作启动盘" class="headerlink" title="二、制作启动盘"></a>二、制作启动盘</h2><ul>
-<li>Linux镜像：ubuntu22.04</li>
-<li>U盘启动工具rufus<ul>
-<li>分区类型：GPT</li>
-<li>目标系统类型：UEFI</li>
-</ul>
-</li>
-</ul>
-<h1 id="三、设置U盘为启动项"><a href="#三、设置U盘为启动项" class="headerlink" title="三、设置U盘为启动项"></a>三、设置U盘为启动项</h1><p>同样开机过程中进入BIOS，将U盘的优先级设置高于Windows</p>
-<h1 id="四、安装Ubuntu"><a href="#四、安装Ubuntu" class="headerlink" title="四、安装Ubuntu"></a>四、安装Ubuntu</h1><p>一些需要注意的关键点</p>
-<ul>
-<li><p><code>更新和其他软件</code>：选择正常安装，其他都不用选</p>
-</li>
-<li><p><code>安装类型</code>：选择第三个<code>其他选项</code></p>
-</li>
-<li><p>创建分区</p>
-<p>其中的空间大小是根据我自己的磁盘空间设置的，因为一共有2T，所以设置的偏大</p>
-<table>
-<thead>
-<tr>
-<th>新分区</th>
-<th>空间大小</th>
-<th>分区类型</th>
-<th>分区位置</th>
-<th>用于</th>
-<th>挂载点</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>根目录</td>
-<td>500G</td>
-<td>主分区</td>
-<td>空间起始位置</td>
-<td>ext4日志文件系统</td>
-<td>/</td>
-<td>根分区 (/)： 根分区通常包含操作系统的核心文件和程序，以及用户安装的软件。如果需要按照较多软件，建议分大一点，例如各种IDE，QQ这种软件默认按照到/opt</td>
-</tr>
-<tr>
-<td>系统引导</td>
-<td>2G</td>
-<td>主分区</td>
-<td>空间起始位置</td>
-<td>ext4日志文件系统</td>
-<td>/boot</td>
-<td>/boot 分区包含了用于系统引导的文件，在系统启动时被加载到内存中，以启动 Linux 操作系统。</td>
-</tr>
-<tr>
-<td>虚拟内存</td>
-<td>8G</td>
-<td>逻辑分区</td>
-<td>空间起始位置</td>
-<td>交换空间</td>
-<td>无</td>
-<td>交换空间（也称为交换分区）是用于虚拟内存的一部分，用于当系统内存不足时，将内存中不常用的数据写入交换空间以释放内存</td>
-</tr>
-<tr>
-<td>用户分区</td>
-<td>剩余所有空间</td>
-<td>主分区</td>
-<td>空间起始位置</td>
-<td>ext4日志文件系统</td>
-<td>/home</td>
-<td>/home 分区是用于存储用户个人文件和配置文件的地方，如代码，文档等。</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>选择启动引导器的设备(在分区界面的下方，有一个下拉框)</p>
-<p>选择刚才分出来的系统引导分区，及/boot对应的设备/dev/xxxxx</p>
-</li>
-<li><p>一直点击下一步</p>
-</li>
-</ul>
-<h1 id="五、ubuntu的一些必要的设置"><a href="#五、ubuntu的一些必要的设置" class="headerlink" title="五、ubuntu的一些必要的设置"></a>五、ubuntu的一些必要的设置</h1><ul>
-<li><p>换源，清华源，参考链接(<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</a>)</p>
-<p>Ubuntu 的软件源配置文件是 <code>/etc/apt/sources.list</code>。将系统自带的该文件做个备份<code>sudo cp sources.list sources.list.bak</code>，将该文件替换为下面内容，即可使用选择的软件源镜像。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line"># deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse</span><br><span class="line"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-
-<p>因镜像站同步有延迟，可能会导致生产环境系统不能及时检查、安装上最新的安全更新，不建议替换 security 源。</p>
-</li>
-<li><p>更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>中文输入法</p>
-<p>试了Googlepinying和搜狗输入法，Linux还是搜狗输入法最好用</p>
-<p>需要安装fcitx，参考搜狗输入法官方提供的安装指南(<a target="_blank" rel="noopener" href="https://shurufa.sogou.com/linux/guide">https://shurufa.sogou.com/linux/guide</a>)</p>
-</li>
-</ul>
-<h1 id="六、安装Nvidia驱动"><a href="#六、安装Nvidia驱动" class="headerlink" title="六、安装Nvidia驱动"></a>六、安装Nvidia驱动</h1><p>坑很多</p>
-<ul>
-<li><p>禁用Nouveau驱动</p>
-<p>nouveau驱动是第三方开源驱动，不是NVIDIA官方驱动(NVIDIA不开源)</p>
-<p>编辑文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/modprobe.d/blacklist.conf </span><br></pre></td></tr></table></figure>
-
-<p>在末尾输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blacklist nouveau</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启电脑</p>
-<p>通过快捷键Ctrl + Alt + F3(或F2，F4)切换到终端</p>
-<p>输入:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod |grep nouveau</span><br></pre></td></tr></table></figure>
-
-<p>如果没有任何输出，说明成功禁用了nouveau</p>
-</li>
-<li><p>下载NVIDIA驱动</p>
-<p><a target="_blank" rel="noopener" href="https://www.nvidia.cn/geforce/drivers/">https://www.nvidia.cn/geforce/drivers/</a></p>
-<p>坑很多，如果安装驱动后重启或关机有问题，多半是驱动问题，只能换一个版本的驱动</p>
-<p>我试了550，535，545，最后550问题最少</p>
-</li>
-<li><p>安装驱动</p>
-<p>在命令行运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash ./NVIDIA-Linux-x86_64-xxx.xx.run</span><br></pre></td></tr></table></figure>
-
-<p>报错：</p>
-<blockquote>
-<p>ERROR: You appear to be running an X server; please exit X before installing.  For &gt;further details, please see the section INSTALLING THE NVIDIA DRIVER in the README &gt;available on the Linux driver download page at <a target="_blank" rel="noopener" href="http://www.nvidia.com/">www.nvidia.com</a>.<br>ERROR: Installation has failed.  Please see the file ‘/var/log/nvidia-installer.log’ &gt;for details.  You may find suggestions on fixing installation problems in the README &gt;available on the Linux driver download page at <a target="_blank" rel="noopener" href="http://www.nvidia.com/">www.nvidia.com</a>.</p>
-</blockquote>
-<p>报错提示没有关闭X server</p>
-<p>解决方法(参考链接<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/149206/how-to-install-nvidia-run">https://askubuntu.com/questions/149206/how-to-install-nvidia-run</a>)</p>
-<p>概括来说就是：</p>
-<ul>
-<li><p>Ctrl + ALT + F3进入命令行</p>
-</li>
-<li><p>关闭图形界面</p>
-<p>查看gdm状态(在linux中，<em>gdm是</em>图形界面，是管理图形显示服务器并处理图形用户登录的程序；gdm用来替代原来的“X Display Manager”，是完全重写的)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service gdm status</span><br></pre></td></tr></table></figure>
-
-<p>关闭gdm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service gdm stop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新运行nvidia驱动安装程序</p>
-</li>
-</ul>
-<p>报错：</p>
-<blockquote>
-<p>The CC version check failed.</p>
-</blockquote>
-<p>系统安装的gcc版本和驱动安装需要的gcc版本不匹配</p>
-<p>在ubuntu22.04，默认gcc版本为gcc11，但是，需要gcc12，需要更新gcc版本：</p>
-<ol>
-<li><p>确认当前 GCC 版本：使用以下命令检查系统上安装的 GCC 版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加 Ubuntu 官方仓库：GCC 12 已经在 Ubuntu 21.10 中可用，如果您的系统版本是 21.10 或更高版本，可以跳过这一步。如果您的系统版本低于 21.10，需要添加 Ubuntu 官方仓库。使用以下命令打开 <code>/etc/apt/sources.list</code> 文件：</p>
-<p>由于我的ubuntu版本为22.04，可以省略步骤2</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<p>在文件末尾添加以下行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://security.ubuntu.com/ubuntu hirsute-security main universe</span><br></pre></td></tr></table></figure>
-
-<p>保存并关闭文件。</p>
-</li>
-<li><p>更新软件包列表：使用以下命令更新软件包列表：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 GCC 12：使用以下命令安装 GCC 12：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc-12 g++-12</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置默认 GCC 版本：GCC 12 安装完成后，使用以下命令将其配置为默认编译器：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12</span><br></pre></td></tr></table></figure>
-
-<p>如果您之前已经安装过其他版本的 GCC，可以使用以下命令切换默认版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config gcc</span><br></pre></td></tr></table></figure>
-
-<p>然后输入对应的编号即可切换默认版本。</p>
-</li>
-<li><p>确认 GCC 版本：使用以下命令确认 GCC 版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>如果以上步骤顺利完成，您的系统上的 GCC 编译器版本应该已经成功升级到 12 版本。</p>
-<p>完成上述操作后，可以成功安装驱动</p>
-</li>
-<li><p>命令行输入nvidia -smi，看是否输出相应显卡信息</p>
-<p>如果没有输出，重启电脑</p>
-</li>
-<li><p>坑</p>
-<p>安装驱动后，开机没问题，关机时出现问题：</p>
-<blockquote>
-<p>左上角一个光标一直闪烁，过了接近2min还不关机</p>
-<p>或者<br>ACPI BIOS ERROR(bug)：Could not resolve symbol [_TZ.ETMD]</p>
-</blockquote>
-</li>
-</ul>
-<p>​	解决：</p>
-<p>​	拯救者有混合输入(Optimus)模式和独显直连模式两种方式，需要切换为独显直连模式</p>
-<p>​	方法：开机过程中按F2进入BIOS，切换为独显模式(在windows系统中切换为独显模式好像没用，要在bios中切换)</p>
-
+          <p>windows11下安装ubuntu22.04，以及显卡驱动，以及一些坑</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/04/14/%E5%AE%89%E8%A3%85Linux%E5%92%8CWindows%E5%8F%8C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E4%BB%A5%E5%8F%8AN%E5%8D%A1%E9%A9%B1%E5%8A%A8/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
