@@ -9,11 +9,9 @@
 <li><strong>Optimizer优化器</strong>：中间代码优化</li>
 <li><strong>Backend后端</strong>：生成机器码</li>
 </ul>
-<img src="/.com//04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/webp.webp" class title="img">
-
+<p><img src="https://yzwsblog.com/2024/04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/webp.webp" alt="img"></p>
 <p>LLVM架构</p>
-<img src="/.com//04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/webp-1713080274658-6.webp" class title="img">
-
+<p><img src="https://yzwsblog.com/2024/04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/webp-1713080274658-6.webp" alt="img"></p>
 <p>LLVM中，不同的前端后端使用统一的中间代码LLVM Intermediate Representation (LLVM IR)</p>
 <p>如果需要开发一种新的变成语言，只需要设计一种新的编译前端，将这种编程语言翻译成LLVM IR</p>
 <p>如果需要支持一种新的硬件设备，只需要设计一种新的编译后端，将LLVM IR生成对应硬件的机器代码</p>
@@ -21,8 +19,7 @@
 <ul>
 <li>clang与LLVM的关系</li>
 </ul>
-<img src="/.com//04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/llvm-IR.jpeg" class title="LLVM: Low-Level Virtual Machine">
-
+<p><img src="https://yzwsblog.com/2024/04/14/ubuntu22-04%E6%90%AD%E5%BB%BAclang%E7%8E%AF%E5%A2%83/llvm-IR.jpeg" alt="LLVM: Low-Level Virtual Machine"></p>
 <p>当出现LLVM时，根据语境有不同的含义，可以是广义上指整个LLVM架构，包括前端，优化器，后端。也可以狭义指专用于代码优化和目标代码生成的LLVM后端。</p>
 <ul>
 <li>clang、msvc(Microsoft Visual C++)、gcc之间的关系(主要从编译器使用者的角度看三者之间的关系，而不是从编译原理理论角度)<ul>
