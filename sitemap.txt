@@ -6,8 +6,8 @@ https://yzwsblog.com/tags/index.html
 https://yzwsblog.com/categories/index.html
 https://yzwsblog.com/archives/index.html
 https://yzwsblog.com/
-https://yzwsblog.com/tags/Linux-command/
 https://yzwsblog.com/tags/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+https://yzwsblog.com/tags/Linux-command/
 https://yzwsblog.com/categories/Linux/
-https://yzwsblog.com/categories/Linux/Linux-command/
 https://yzwsblog.com/categories/Linux/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+https://yzwsblog.com/categories/Linux/Linux-command/
