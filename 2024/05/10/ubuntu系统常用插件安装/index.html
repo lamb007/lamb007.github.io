@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/image-20240510133632121.png">
 <meta property="article:published_time" content="2024-05-10T04:30:46.000Z">
-<meta property="article:modified_time" content="2024-05-10T06:17:16.112Z">
+<meta property="article:modified_time" content="2024-05-10T06:40:52.547Z">
 <meta property="article:author" content="Lamb">
 <meta property="article:tag" content="Linux环境搭建">
 <meta name="twitter:card" content="summary">
@@ -338,7 +338,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-05-10 12:30:46 / 修改时间：14:17:16" itemprop="dateCreated datePublished" datetime="2024-05-10T12:30:46+08:00">2024-05-10</time>
+      <time title="创建时间：2024-05-10 12:30:46 / 修改时间：14:40:52" itemprop="dateCreated datePublished" datetime="2024-05-10T12:30:46+08:00">2024-05-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -382,14 +382,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.2k</span>
+      <span>4.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -484,10 +484,16 @@ mjx-container[display="true"] + br {
 <p>On Ubuntu / Mint, install <em>The Fuck</em> with the following commands:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install python3-dev python3-pip python3-setuptools <span class="comment"># 有conda环境可以省略</span></span><br><span class="line">pip3 install thefuck --user</span><br></pre></td></tr></table></figure>
 
-<p>fish中配置，参考：<a target="_blank" rel="noopener" href="https://github.com/nvbn/thefuck/wiki/Shell-aliases">https://github.com/nvbn/thefuck/wiki/Shell-aliases</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> ~/.config/fish/functions/fuck.fish</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'thefuck --alias'</span> &gt;&gt; ~/.config/fish/functions/fuck.fish</span><br></pre></td></tr></table></figure>
+<p>fish中配置fuck命令，参考：<a target="_blank" rel="noopener" href="https://github.com/nvbn/thefuck/wiki/Shell-aliases">https://github.com/nvbn/thefuck/wiki/Shell-aliases</a></p>
+<blockquote>
+<p>Create a file <code>~/.config/fish/functions/fuck.fish</code> instead and paste the output of <code>thefuck --alias</code> into that file. Fish should start as fast as before.</p>
+</blockquote>
+<p>fish中运行该命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">❯ thefuck --<span class="built_in">alias</span>                                                                                               </span><br><span class="line"><span class="keyword">function</span> fuck -d <span class="string">"Correct your previous console command"</span></span><br><span class="line">  <span class="built_in">set</span> -l fucked_up_command <span class="variable">$history</span>[1]</span><br><span class="line">  <span class="built_in">env</span> TF_SHELL=fish TF_ALIAS=fuck PYTHONIOENCODING=utf-8 thefuck <span class="variable">$fucked_up_command</span> THEFUCK_ARGUMENT_PLACEHOLDER <span class="variable">$argv</span> | <span class="built_in">read</span> -l unfucked_command</span><br><span class="line">  <span class="keyword">if</span> [ <span class="string">"<span class="variable">$unfucked_command</span>"</span> != <span class="string">""</span> ]</span><br><span class="line">    <span class="built_in">eval</span> <span class="variable">$unfucked_command</span></span><br><span class="line">    <span class="built_in">builtin</span> <span class="built_in">history</span> delete --exact --case-sensitive -- <span class="variable">$fucked_up_command</span></span><br><span class="line">    <span class="built_in">builtin</span> <span class="built_in">history</span> merge</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
-<p>重启终端输入fuck即可使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> ~/.config/fish/functions/fuck.fish</span><br></pre></td></tr></table></figure>
+
+<p>将上面的function fuck粘贴到fuck.fish中即可。</p>
 <h2 id="lf"><a href="#lf" class="headerlink" title="lf"></a>lf</h2><p>终端文件阅读器</p>
 <p>Github：<a target="_blank" rel="noopener" href="https://github.com/gokcehan/lf%EF%BC%8Chttps://github.com/gokcehan/lf/wiki/Tutorial">https://github.com/gokcehan/lf，https://github.com/gokcehan/lf/wiki/Tutorial</a></p>
 <p>下载：<a target="_blank" rel="noopener" href="https://github.com/gokcehan/lf/releases%EF%BC%8C[lf-linux-amd64.tar.gz](https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz)">https://github.com/gokcehan/lf/releases，[lf-linux-amd64.tar.gz](https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz)</a></p>
@@ -584,7 +590,7 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
