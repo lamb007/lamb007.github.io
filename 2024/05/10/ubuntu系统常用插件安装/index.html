@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="google-site-verification=jv8wAO11OAIk9JX4UCIGeulY_sTzxHOO0-2KfiP0I9k">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yzwsblog.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"style":null,"show_result":false},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="安装一些常用的插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu系统常用插件安装.md">
+<meta property="og:url" content="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="Lamb&#39;s Blog">
+<meta property="og:description" content="安装一些常用的插件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/image-20240510133632121.png">
+<meta property="article:published_time" content="2024-05-10T04:30:46.000Z">
+<meta property="article:modified_time" content="2024-05-10T06:17:16.112Z">
+<meta property="article:author" content="Lamb">
+<meta property="article:tag" content="Linux环境搭建">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/image-20240510133632121.png">
+
+
+<link rel="canonical" href="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/","path":"2024/05/10/ubuntu系统常用插件安装/","title":"ubuntu系统常用插件安装.md"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ubuntu系统常用插件安装.md | Lamb's Blog</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https://lamb-blog.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Lamb's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Lamb's Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">终端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#wezterm%E7%BB%88%E7%AB%AF"><span class="nav-number">1.1.</span> <span class="nav-text">wezterm终端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wezterm%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96"><span class="nav-number">1.1.2.</span> <span class="nav-text">wezterm主题美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.3.</span> <span class="nav-text">主题修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.4.</span> <span class="nav-text">常见问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alacritty%E7%BB%88%E7%AB%AF"><span class="nav-number">1.2.</span> <span class="nav-text">alacritty终端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fish%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">fish配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tide%E4%B8%BB%E9%A2%98"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">tide主题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#thefuck"><span class="nav-number">2.1.</span> <span class="nav-text">thefuck</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lf"><span class="nav-number">2.2.</span> <span class="nav-text">lf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trash-cli"><span class="nav-number">2.3.</span> <span class="nav-text">trash-cli</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Lamb</p>
+  <div class="site-description" itemprop="description">Lamb's Blog</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lamb">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lamb's Blog">
+      <meta itemprop="description" content="Lamb's Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ubuntu系统常用插件安装.md | Lamb's Blog">
+      <meta itemprop="description" content="安装一些常用的插件">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu系统常用插件安装.md
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-05-10 12:30:46 / 修改时间：14:17:16" itemprop="dateCreated datePublished" datetime="2024-05-10T12:30:46+08:00">2024-05-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">Linux环境搭建</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">评论数：</span>
+  
+    <a title="waline" href="/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">安装一些常用的插件</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h1><h2 id="wezterm终端"><a href="#wezterm终端" class="headerlink" title="wezterm终端"></a>wezterm终端</h2><p>wezterm终端自带terminal multiplexer功能</p>
+<p>wezterm相关地址:</p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/wez/wezterm">https://github.com/wez/wezterm</a></p>
+<p>官网：<a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/">https://wezfurlong.org/wezterm/</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/install/linux.html">https://wezfurlong.org/wezterm/install/linux.html</a></p>
+<h3 id="wezterm主题美化"><a href="#wezterm主题美化" class="headerlink" title="wezterm主题美化"></a>wezterm主题美化</h3><p><a target="_blank" rel="noopener" href="https://github.com/KevinSilvester/wezterm-config">https://github.com/KevinSilvester/wezterm-config</a></p>
+<p>wezterm配置文件推荐位置为：</p>
+<blockquote>
+<p>单配置文件：The recommendation is to place your configuration file at <code>$HOME/.wezterm.lua</code> (<code>%HOME%/.wezterm.lua</code> on Windows) to get started.</p>
+<p>多配置文件：More complex configurations that need to span multiple files can be placed in <code>$XDG_CONFIG_HOME/wezterm/wezterm.lua</code> (for X11/Wayland) or <code>$HOME/.config/wezterm/wezterm.lua</code> (for all other systems).</p>
+</blockquote>
+<p>由于这个项目使用的是多配置文集，因此进入<code>~/config</code>,将项目克隆到wezterm目录中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:KevinSilvester/wezterm-config.git wezterm</span><br></pre></td></tr></table></figure>
+
+<p>重启wezterm</p>
+<ul>
+<li>提示未安装字体JetBrains Mono Nerd Font：</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></p>
+<p>下载Jetbrains Mono Nerd Font，解压到/usr/share/fonts目录下</p>
+</blockquote>
+<p>执行命令刷新缓存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fc-cache -f -v</span><br></pre></td></tr></table></figure>
+
+<p>查看是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ fc-list | grep <span class="string">'JetBrainsMono Nerd'</span>                                                                            </span><br><span class="line">/usr/share/fonts/JetBrainsMono Nerd Font/JetBrainsMonoNLNerdFontPropo-Thin.ttf: JetBrainsMonoNL Nerd Font Propo,JetBrainsMonoNL NFP,JetBrainsMonoNL NFP Thin:style=Thin,Regular</span><br><span class="line">/usr/share/fonts/JetBrainsMono Nerd Font/JetBrainsMonoNerdFont-MediumItalic.ttf: JetBrainsMono Nerd Font,JetBrainsMono NF,JetBrainsMono NF Medium:style=Medium Italic,Italic</span><br><span class="line">...........<span class="comment"># 省略</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>提示未安装fish</p>
+<p>fish是一种shell，ubuntu默认shell是bash，下载fish</p>
+<p>fish下载网址：<a target="_blank" rel="noopener" href="https://launchpad.net/~fish-shell/+archive/ubuntu/release-3/+packages">https://launchpad.net/~fish-shell/+archive/ubuntu/release-3/+packages</a></p>
+<p>如图，ubuntu22.04是jammy版本的，下载<a target="_blank" rel="noopener" href="https://launchpad.net/~fish-shell/+archive/ubuntu/release-3/+files/fish_3.7.1-1~jammy_amd64.deb">fish_3.7.1-1~jammy_amd64.deb</a></p>
+<p><img src="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/image-20240510133632121.png" alt="image-20240510133632121"></p>
+<p>进入deb所在目录，安装deb包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install ./fish_3.7.1-1~jammy_amd64.deb</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><ul>
+<li><p>修改快捷键：~/.config/wezterm/config/bindings.lua</p>
+</li>
+<li><p>修改终端默认大小：~/.config/wezterm/config/appearance.lua</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/config/lua/config/initial_cols.html">https://wezfurlong.org/wezterm/config/lua/config/initial_cols.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/config/lua/config/initial_rows.html">https://wezfurlong.org/wezterm/config/lua/config/initial_rows.html</a></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> {</span><br><span class="line">   <span class="comment">-- 初始行数、列数</span></span><br><span class="line">   initial_rows = <span class="number">28</span>,</span><br><span class="line">   initial_cols = <span class="number">120</span>,</span><br><span class="line">   animation_fps = <span class="number">60</span>,</span><br><span class="line">   max_fps = <span class="number">60</span></span><br><span class="line">   <span class="comment">-- 省略</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li><p>发现wezterm里无法使用中文输入法，默认输入的都是英文</p>
+<p>参考问题：<a target="_blank" rel="noopener" href="https://github.com/wez/wezterm/issues/250">https://github.com/wez/wezterm/issues/250</a></p>
+<p>后面发现新版本已经修复了这个问题(<a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/config/lua/config/use_ime.html?h=use_ime">https://wezfurlong.org/wezterm/config/lua/config/use_ime.html?h=use_ime</a>)</p>
+<p>无法输入中文是因为我在安装了搜狗输入法之后把英文输入法删除了，后面我将英文输入法添加后在wezterm中就可以切换为中文输入法</p>
+</li>
+</ul>
+<h2 id="alacritty终端"><a href="#alacritty终端" class="headerlink" title="alacritty终端"></a>alacritty终端</h2><p>alacritty速度也很快，就是不支持terminal multiplexer</p>
+<p>用于代替ubuntu默认的终端，默认的终端经常卡顿、闪烁，由于有一些软件默认使用bash配置，在fish中配置很麻烦，因此alacritty不使用fish，使用bash。</p>
+<p>相关地址：</p>
+<p>GitHub：<a target="_blank" rel="noopener" href="https://github.com/alacritty/alacritty">https://github.com/alacritty/alacritty</a></p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu">https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu</a></p>
+<p>注意：</p>
+<blockquote>
+<p>apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3</p>
+<p>由于安装了conda，python3可以不用安装</p>
+</blockquote>
+<p>添加桌面入口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> target/release/alacritty /usr/local/bin <span class="comment"># or anywhere else in $PATH</span></span><br><span class="line">sudo <span class="built_in">cp</span> extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg</span><br><span class="line">sudo desktop-file-install extra/linux/Alacritty.desktop</span><br><span class="line">sudo update-desktop-database</span><br></pre></td></tr></table></figure>
+
+<p>颜色主题：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/catppuccin/alacritty">https://github.com/catppuccin/alacritty</a></p>
+<h2 id="fish配置"><a href="#fish配置" class="headerlink" title="fish配置"></a>fish配置</h2><p>fish有默认的主题美化web界面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fish_config</span><br></pre></td></tr></table></figure>
+
+<p>进入web界面挑选</p>
+<h4 id="tide主题"><a href="#tide主题" class="headerlink" title="tide主题"></a>tide主题</h4><p>Github：<a target="_blank" rel="noopener" href="https://github.com/IlanCosman/tide">https://github.com/IlanCosman/tide</a></p>
+<p>使用fisher安装tide，不要使用手动安装，有bug</p>
+<p>安装完成后，输入<code>tide configure</code>即可配置</p>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="thefuck"><a href="#thefuck" class="headerlink" title="thefuck"></a>thefuck</h2><p>Github：<a target="_blank" rel="noopener" href="https://github.com/nvbn/thefuck">https://github.com/nvbn/thefuck</a></p>
+<p>输错命令时输入fuck可以自动修改，例如thefuck README中的例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜ apt-get install vim</span><br><span class="line">E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)</span><br><span class="line">E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?</span><br><span class="line"></span><br><span class="line">➜ fuck</span><br><span class="line">sudo apt-get install vim [enter/↑/↓/ctrl+c]</span><br><span class="line">[sudo] password <span class="keyword">for</span> nvbn:</span><br><span class="line">Reading package lists... Done</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>On Ubuntu / Mint, install <em>The Fuck</em> with the following commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install python3-dev python3-pip python3-setuptools <span class="comment"># 有conda环境可以省略</span></span><br><span class="line">pip3 install thefuck --user</span><br></pre></td></tr></table></figure>
+
+<p>fish中配置，参考：<a target="_blank" rel="noopener" href="https://github.com/nvbn/thefuck/wiki/Shell-aliases">https://github.com/nvbn/thefuck/wiki/Shell-aliases</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> ~/.config/fish/functions/fuck.fish</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'thefuck --alias'</span> &gt;&gt; ~/.config/fish/functions/fuck.fish</span><br></pre></td></tr></table></figure>
+
+<p>重启终端输入fuck即可使用</p>
+<h2 id="lf"><a href="#lf" class="headerlink" title="lf"></a>lf</h2><p>终端文件阅读器</p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/gokcehan/lf%EF%BC%8Chttps://github.com/gokcehan/lf/wiki/Tutorial">https://github.com/gokcehan/lf，https://github.com/gokcehan/lf/wiki/Tutorial</a></p>
+<p>下载：<a target="_blank" rel="noopener" href="https://github.com/gokcehan/lf/releases%EF%BC%8C[lf-linux-amd64.tar.gz](https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz)">https://github.com/gokcehan/lf/releases，[lf-linux-amd64.tar.gz](https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz)</a></p>
+<p>解压到<code>~/.local/bin</code></p>
+<p>然后在fish中将该目录添加到PATH环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fish_add_path ~/.local/bin</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="trash-cli"><a href="#trash-cli" class="headerlink" title="trash-cli"></a>trash-cli</h2><p>用于代替rm命令，将文件删除后会进入回收站</p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/andreafrancia/trash-cli">https://github.com/andreafrancia/trash-cli</a></p>
+<p>trash-cli 用于移动文件到回收站，同时会记录文件的原地址、删除日期和权限。trash-cli 和 KDE、GNOME、XFCE 使用同一个回收站，你可以在命令行或脚本运行 trash-cli。trash-cli 提供以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">trash-put           把文件或目录移动到回收站</span><br><span class="line">trash-empty         清空回收站</span><br><span class="line">trash-list          列出回收站文件</span><br><span class="line">trash-restore       恢复回收站文件</span><br><span class="line">trash-rm            删除回收站文件</span><br></pre></td></tr></table></figure>
+
+<p>从 home 分区移动到回收站的文件在这：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/Trash/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install trash-cli</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Lamb
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://yzwsblog.com/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" title="ubuntu系统常用插件安装.md">https://yzwsblog.com/2024/05/10/ubuntu系统常用插件安装/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag"># Linux环境搭建</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/14/Linux%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%89%88%E6%9C%AC/" rel="prev" title="Linux更新软件包版本">
+                  <i class="fa fa-angle-left"></i> Linux更新软件包版本
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Lamb</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">11k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">20 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://lamb-blog.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"libUrl":"https://unpkg.com/@waline/client@v2/dist/waline.js","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://unpkg.com/@waline/emojis@1.0.1/bilibili","https://unpkg.com/@waline/emojis@1.0.1/qq","https://unpkg.com/@waline/emojis@1.0.1/tieba"],"wordLimit":0,"login":"enable","pageSize":10,"el":"#waline","comment":true,"path":"/2024/05/10/ubuntu%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
